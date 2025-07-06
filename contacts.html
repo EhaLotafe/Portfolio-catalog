@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contactez Myrage Digital - Tech Trainer pour vos projets numériques, formations et conseils en transformation digitale." />
+  <title>Contact - Myrage Digital | Tech Trainer</title>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    :root {
+      --bleu-nuit: #101418;
+      --vert-congo: #2a9d8f;
+      --beige-terre: #f5f0e6;
+      --or-savoir: #ffb703;
+      --gris-graphite: #333333;
+      --blanc-pur: #f9f9f9;
+    }
+    body {
+      background-color: var(--beige-terre);
+      color: var(--gris-graphite);
+      font-family: 'Work Sans', 'Noto Sans', sans-serif;
+    }
+    a {
+      color: var(--vert-congo);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--or-savoir);
+      text-decoration: underline;
+    }
+    .bg-bleu-nuit { background-color: var(--bleu-nuit); }
+    .bg-blanc-pur { background-color: var(--blanc-pur); }
+    .text-blanc-pur { color: var(--blanc-pur); }
+    .text-bleu-nuit { color: var(--bleu-nuit); }
+    .text-vert-congo { color: var(--vert-congo); }
+    .text-or-savoir { color: var(--or-savoir); }
+    .bg-or-savoir { background-color: var(--or-savoir); }
+    .hover\:bg-vert-congo:hover { background-color: var(--vert-congo); }
+    .border-gris-graphite { border-color: var(--gris-graphite); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="bg-bleu-nuit text-blanc-pur shadow-md px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <svg class="w-8 h-8 text-or-savoir" viewBox="0 0 48 48" fill="currentColor"><path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"/></svg>
+      <h1 class="text-xl font-bold">Myrage Digital</h1>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm font-semibold">
+      <a href="index.html" class="hover:text-or-savoir">Accueil</a>
+      <a href="about.html" class="hover:text-or-savoir">À propos</a>
+      <a href="services.html" class="hover:text-or-savoir">Services</a>
+      <a href="catalog.html" class="hover:text-or-savoir">Catalogue</a>
+      <a href="blog.html" class="hover:text-or-savoir">Blog</a>
+      <a href="suscribe.html" class="hover:text-or-savoir">Newsletter</a>
+      <a href="contacts.html" class="text-or-savoir underline font-bold">Contact</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow py-12 px-4 sm:px-6 md:px-12 flex justify-center">
+    <div class="w-full max-w-3xl bg-blanc-pur p-6 sm:p-8 md:p-12 rounded-xl shadow-xl">
+      <section class="mb-10 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-bleu-nuit mb-4">Contactez-moi</h1>
+        <p class="text-base sm:text-lg text-vert-congo">Je suis disponible pour discuter de vos projets, formations ou collaborations.</p>
+      </section>
+
+      <form id="contact-form" method="POST" action="https://formspree.io/f/mwkzljrj" class="space-y-6" aria-label="Formulaire de contact Myrage Digital">
+        <div>
+          <label for="name" class="block text-bleu-nuit font-semibold mb-2">Nom complet</label>
+          <input id="name" name="name" type="text" required placeholder="Votre nom" class="w-full p-4 rounded-xl bg-beige-terre border border-gris-graphite placeholder-vert-congo focus:ring focus:ring-or-savoir focus:outline-none" />
+        </div>
+
+        <div>
+          <label for="email" class="block text-bleu-nuit font-semibold mb-2">Adresse email</label>
+          <input id="email" name="email" type="email" required placeholder="votre.email@exemple.com" class="w-full p-4 rounded-xl bg-beige-terre border border-gris-graphite placeholder-vert-congo focus:ring focus:ring-or-savoir focus:outline-none" />
+        </div>
+
+        <div>
+          <label for="message" class="block text-bleu-nuit font-semibold mb-2">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Votre message ici..." class="w-full p-4 rounded-xl bg-beige-terre border border-gris-graphite placeholder-vert-congo focus:ring focus:ring-or-savoir focus:outline-none resize-none"></textarea>
+        </div>
+
+        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
+        <button type="submit" class="w-full py-3 bg-or-savoir text-blanc-pur font-bold rounded-full hover:bg-vert-congo transition duration-300 flex items-center justify-center">
+          <span>Envoyer le message</span>
+          <span id="loader" class="ml-2 hidden">
+            <svg class="animate-spin w-5 h-5 text-blanc-pur" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+            </svg>
+          </span>
+        </button>
+        <div id="feedback" class="text-center text-sm mt-4"></div>
+      </form>
+
+      <section class="mt-12">
+        <h2 class="text-2xl font-bold text-bleu-nuit mb-4">Informations de contact</h2>
+        <div class="space-y-6 text-bleu-nuit">
+          <div class="flex gap-4">
+            <svg class="w-6 h-6 text-or-savoir mt-1" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5zm18-2H3a2 2 0 00-2 2v14a2 2 0 002 2h18a2 2 0 002-2V5a2 2 0 00-2-2zM7 10h10v2H7v-2z" /></svg>
+            <div><strong>Email :</strong> <a href="mailto:overcomeeha@gmail.com">overcomeeha@gmail.com</a><br/><small class="text-vert-congo">Réponse sous 24h</small></div>
+          </div>
+          <div class="flex gap-4">
+            <svg class="w-6 h-6 text-or-savoir mt-1" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.054 15.054 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.49 2.53.76 3.88.76a1 1 0 011 1v3.5a1 1 0 01-1 1C7.82 20.37 3.63 16.18 3.63 10a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.26 2.67.76 3.88a1 1 0 01-.27 1.11l-2.2 2.2z"/></svg>
+            <div><strong>Téléphone :</strong> <a href="tel:+243990918934">+243 990 918 934</a><br/><small class="text-vert-congo">Disponible 9h - 17h</small></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-bleu-nuit text-center text-sm text-blanc-pur py-6">
+    © 2025 Myrage Digital – Tous droits réservés.
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const loader = document.getElementById('loader');
+      const feedback = document.getElementById('feedback');
+      loader.classList.remove('hidden');
+      feedback.textContent = '';
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Erreur lors de l’envoi.');
+        feedback.textContent = 'Merci pour votre message. Nous vous répondrons rapidement !';
+        feedback.className = 'text-green-700';
+        form.reset();
+      } catch (err) {
+        feedback.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+        feedback.className = 'text-red-700';
+      } finally {
+        loader.classList.add('hidden');
+      }
+    });
+  </script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

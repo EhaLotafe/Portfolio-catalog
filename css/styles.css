@@ -1,0 +1,258 @@
+/* 🌍 Palette personnalisée : Manasse Lotafe Portfolio */
+:root {
+  --bleu-nuit:      #001F3F;
+  --vert-congo:     #228B22;
+  --beige-terre:    #F5F0E1;
+  --or-savoir:      #DAA520;
+  --rouge-kinois:   #C0392B;
+  --gris-graphite:  #2E2E2E;
+  --blanc-pur:      #FFFFFF;
+
+  /* Variables génériques */
+  --border-radius: 12px;
+  --padding-standard: 1rem;
+  --transition-standard: 0.3s ease;
+}
+
+/* 🌟 Structure générale */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', 'Noto Sans', sans-serif;
+  background-color: var(--beige-terre);
+  color: var(--gris-graphite);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ✅ Navigation */
+header {
+  background-color: var(--bleu-nuit);
+  color: var(--blanc-pur);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: var(--padding-standard) 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--blanc-pur);
+  font-weight: 500;
+  transition: color var(--transition-standard);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--or-savoir);
+  outline-offset: 2px;
+  outline: 3px solid var(--or-savoir);
+}
+
+/* 🔘 Boutons */
+.button-primary,
+.button-accent {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-standard), box-shadow var(--transition-standard);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-primary {
+  background-color: var(--vert-congo);
+  color: var(--blanc-pur);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background-color: #1c6d1c;
+  outline-offset: 2px;
+  outline: 3px solid #1c6d1c;
+  box-shadow: 0 0 8px rgba(28, 109, 28, 0.7);
+}
+
+.button-accent {
+  background-color: var(--or-savoir);
+  color: var(--gris-graphite);
+}
+
+.button-accent:hover,
+.button-accent:focus-visible {
+  background-color: #c49c1a;
+  outline-offset: 2px;
+  outline: 3px solid #c49c1a;
+  box-shadow: 0 0 8px rgba(196, 156, 26, 0.7);
+}
+
+/* 🖼️ Hero */
+.hero-bg {
+  background-image: url('../assets/hero.jpg'); /* mettre le bon chemin */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  color: var(--blanc-pur);
+  text-align: center;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.hero-bg > div {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+/* 🧩 Sections */
+.section-dark {
+  background-color: var(--bleu-nuit);
+  color: var(--blanc-pur);
+  padding: 4rem 2rem;
+}
+
+.section-light {
+  background-color: var(--beige-terre);
+  color: var(--gris-graphite);
+  padding: 4rem 2rem;
+}
+
+/* 📦 Grille cartes services */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* 📦 Carte */
+.card {
+  background-color: var(--blanc-pur);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-standard);
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  outline-offset: 2px;
+  outline: 3px solid var(--or-savoir);
+}
+
+/* 💬 Alertes */
+.alert-success {
+  background-color: var(--vert-congo);
+  color: var(--blanc-pur);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.alert-error {
+  background-color: var(--rouge-kinois);
+  color: var(--blanc-pur);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* 🔽 Formulaires */
+.contact-form {
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  border-radius: 8px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color var(--transition-standard), box-shadow var(--transition-standard);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--vert-congo);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+}
+
+/* 🧭 Liens */
+a {
+  color: var(--or-savoir);
+  text-decoration: none;
+  transition: color var(--transition-standard);
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  outline-offset: 2px;
+  outline: 3px solid var(--or-savoir);
+}
+
+/* 📍 Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--bleu-nuit);
+  color: var(--blanc-pur);
+  font-size: 0.9rem;
+}
+
+

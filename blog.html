@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Blog Tech Trainer : Articles, tutoriels, actualités tech et formation pour développeurs et professionnels du numérique." />
+    <title>Blog - Tech Trainer</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Work+Sans:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      :root {
+        --bleu-nuit: #001F3F;
+        --vert-congo: #228B22;
+        --beige-terre: #F5F0E1;
+        --or-savoir: #DAA520;
+        --rouge-kinois: #C0392B;
+        --gris-graphite: #2E2E2E;
+        --blanc-pur: #FFFFFF;
+      }
+      body {
+        font-family: 'Work Sans', 'Noto Sans', sans-serif;
+        background-color: var(--beige-terre);
+        color: var(--gris-graphite);
+      }
+      header {
+        background-color: var(--bleu-nuit);
+        color: var(--blanc-pur);
+      }
+      a {
+        color: var(--or-savoir);
+      }
+      a:hover {
+        color: var(--vert-congo);
+        text-decoration: underline;
+      }
+      .button-primary {
+        background-color: var(--vert-congo);
+        color: var(--blanc-pur);
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .button-primary:hover {
+        background-color: #1c6d1c;
+      }
+      input[type="text"] {
+        border: 1px solid #ccc;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        width: 100%;
+        font-family: inherit;
+        font-size: 1rem;
+      }
+      input[type="text"]:focus {
+        border-color: var(--vert-congo);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+      }
+    </style>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-10 py-4" role="banner" aria-label="En-tête principal">
+      <div class="flex items-center gap-3">
+        <svg
+          class="w-6 h-6 text-[var(--or-savoir)]"
+          viewBox="0 0 48 48"
+          fill="currentColor"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" />
+        </svg>
+        <h1 class="text-xl font-bold">Tech Trainer</h1>
+      </div>
+      <nav class="flex gap-6 text-sm font-medium" role="navigation" aria-label="Menu principal">
+        <a href="index.html" class="hover:text-[var(--or-savoir)]">Accueil</a>
+        <a href="about.html" class="hover:text-[var(--or-savoir)]">À propos</a>
+        <a href="services.html" class="hover:text-[var(--or-savoir)]">Services</a>
+        <a href="blog.html" class="text-[var(--or-savoir)]" aria-current="page">Blog</a>
+        <a href="#contact" class="hover:text-[var(--or-savoir)]">Contact</a>
+      </nav>
+      <button
+        class="button-primary flex items-center gap-2"
+        aria-label="Recherche"
+        onclick="document.getElementById('search-input').focus();"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          viewBox="0 0 256 256"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+          />
+        </svg>
+        Rechercher
+      </button>
+    </header>
+
+    <!-- Main content -->
+    <main class="flex-grow max-w-6xl mx-auto py-10 px-6">
+      <h2 class="text-3xl font-bold mb-6">Blog</h2>
+
+      <!-- Search -->
+      <div class="mb-8">
+        <label for="search-input" class="sr-only">Recherche d'article</label>
+        <div class="flex rounded-xl bg-[#eaedf1] overflow-hidden">
+          <div class="flex items-center px-3 text-[var(--bleu-nuit)]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 256 256"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+              />
+            </svg>
+          </div>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Rechercher un article..."
+            class="w-full bg-[#eaedf1] px-4 py-2 outline-none"
+            onkeyup="filterArticles()"
+            aria-label="Rechercher un article"
+          />
+        </div>
+      </div>
+
+      <!-- Featured articles -->
+      <section class="mb-10">
+        <h3 class="text-2xl font-semibold mb-4">Articles en vedette</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="rounded-xl bg-white shadow p-4" tabindex="0" aria-label="Article: Maîtriser le développement web moderne">
+            <img
+              src="https://via.placeholder.com/400x225.png?text=Développement+Web"
+              alt="Image illustrative du développement web"
+              class="aspect-video rounded-xl mb-4 object-cover w-full"
+            />
+            <h4 class="font-medium text-[var(--bleu-nuit)]">Maîtriser le développement web moderne</h4>
+            <p class="text-sm text-gray-600">
+              Guide complet pour créer des applications web responsives.
+            </p>
+          </article>
+
+          <article class="rounded-xl bg-white shadow p-4" tabindex="0" aria-label="Article: L'avenir de la formation tech">
+            <img
+              src="https://via.placeholder.com/400x225.png?text=Formation+Tech"
+              alt="Image illustrative de la formation tech"
+              class="aspect-video rounded-xl mb-4 object-cover w-full"
+            />
+            <h4 class="font-medium text-[var(--bleu-nuit)]">L'avenir de la formation tech</h4>
+            <p class="text-sm text-gray-600">
+              Perspectives et analyses sur l'évolution de l'éducation technologique.
+            </p>
+          </article>
+
+          <article class="rounded-xl bg-white shadow p-4" tabindex="0" aria-label="Article: Outils indispensables pour développeurs">
+            <img
+              src="https://via.placeholder.com/400x225.png?text=Outils+Développeurs"
+              alt="Image illustrative des outils pour développeurs"
+              class="aspect-video rounded-xl mb-4 object-cover w-full"
+            />
+            <h4 class="font-medium text-[var(--bleu-nuit)]">Outils indispensables pour développeurs</h4>
+            <p class="text-sm text-gray-600">
+              Améliore ta productivité avec ces outils clés.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Recent articles -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-4">Articles récents</h3>
+        <div id="articles-list" class="space-y-6">
+          <article class="flex gap-4 items-center bg-white rounded-xl shadow p-4" tabindex="0" aria-label="Article: Construire une API scalable avec Node.js">
+            <div class="flex-1">
+              <h5 class="font-bold text-[var(--bleu-nuit)]">Construire une API scalable avec Node.js</h5>
+              <p class="text-sm text-gray-600">Concevoir des API robustes avec Node.js et Express.</p>
+            </div>
+            <img
+              src="https://via.placeholder.com/160x90.png?text=API+Node.js"
+              alt="Image illustrative d'une API Node.js"
+              class="aspect-video w-40 rounded-xl object-cover"
+            />
+          </article>
+
+          <article class="flex gap-4 items-center bg-white rounded-xl shadow p-4" tabindex="0" aria-label="Article: Introduction au cloud computing">
+            <div class="flex-1">
+              <h5 class="font-bold text-[var(--bleu-nuit)]">Introduction au cloud computing</h5>
+              <p class="text-sm text-gray-600">Découvre les bases du cloud et ses bénéfices concrets.</p>
+            </div>
+            <img
+              src="https://via.placeholder.com/160x90.png?text=Cloud+Computing"
+              alt="Image illustrative du cloud computing"
+              class="aspect-video w-40 rounded-xl object-cover"
+            />
+          </article>
+
+          <article class="flex gap-4 items-center bg-white rounded-xl shadow p-4" tabindex="0" aria-label="Article: Techniques avancées en JavaScript">
+            <div class="flex-1">
+              <h5 class="font-bold text-[var(--bleu-nuit)]">Techniques avancées en JavaScript</h5>
+              <p class="text-sm text-gray-600">Approfondis closures, promises et async/await.</p>
+            </div>
+            <img
+              src="https://via.placeholder.com/160x90.png?text=JavaScript"
+              alt="Image illustrative de JavaScript"
+              class="aspect-video w-40 rounded-xl object-cover"
+            />
+          </article>
+
+          <article class="flex gap-4 items-center bg-white rounded-xl shadow p-4" tabindex="0" aria-label="Article: Bonnes pratiques de conception de bases de données">
+            <div class="flex-1">
+              <h5 class="font-bold text-[var(--bleu-nuit)]">Bonnes pratiques de conception de bases de données</h5>
+              <p class="text-sm text-gray-600">Structure des bases efficaces et évolutives.</p>
+            </div>
+            <img
+              src="https://via.placeholder.com/160x90.png?text=Bases+de+donnees"
+              alt="Image illustrative des bases de données"
+              class="aspect-video w-40 rounded-xl object-cover"
+            />
+          </article>
+        </div>
+      </section>
+
+      <!-- Pagination -->
+      <nav class="flex justify-center mt-10 gap-2 text-sm" aria-label="Pagination des articles">
+        <a href="#" class="px-3 py-1 rounded-full bg-[#eaedf1] font-bold" aria-current="page">1</a>
+        <a href="#" class="px-3 py-1 rounded-full hover:bg-[#d4d8db]">2</a>
+        <a href="#" class="px-3 py-1 rounded-full hover:bg-[#d4d8db]">3</a>
+        <span class="px-3 py-1">...</span>
+        <a href="#" class="px-3 py-1 rounded-full hover:bg-[#d4d8db]">10</a>
+      </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-gray-600 py-6 bg-[var(--bleu-nuit)] text-[var(--blanc-pur)]">
+      &copy; 2025 Tech Trainer. Tous droits réservés.
+    </footer>
+
+    <!-- Simple client-side filter script -->
+    <script>
+      function filterArticles() {
+        const input = document.getElementById('search-input');
+        const filter = input.value.toLowerCase();
+        const articles = document.querySelectorAll('#articles-list article, section.mb-10 article');
+
+        articles.forEach((article) => {
+          const text = article.textContent.toLowerCase();
+          if (text.includes(filter)) {
+            article.style.display = '';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+      }
+    </script>
+    <script src="js/main.js" defer></script>
+
+  </body>
+</html>

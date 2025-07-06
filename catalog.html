@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Catalogue complet de Myrage Digital : services, formations, produits SaaS et projets clés pour la transformation digitale des PME en RDC." />
+  <title>Catalogue – Myrage Digital</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bleu-nuit: #101418;
+      --vert-congo: #2a9d8f;
+      --beige-terre: #f5f0e6;
+      --or-savoir: #ffb703;
+      --gris-graphite: #333333;
+      --blanc-pur: #f9f9f9;
+    }
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: var(--beige-terre);
+      color: var(--gris-graphite);
+    }
+    .bg-bleu-nuit { background-color: var(--bleu-nuit); }
+    .text-bleu-nuit { color: var(--bleu-nuit); }
+    .text-vert-congo { color: var(--vert-congo); }
+    .text-or-savoir { color: var(--or-savoir); }
+    .bg-or-savoir { background-color: var(--or-savoir); }
+    .button-primary {
+      background-color: var(--or-savoir);
+      color: var(--bleu-nuit);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .button-primary:hover {
+      background-color: var(--vert-congo);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="flex justify-between items-center px-6 md:px-10 py-4 bg-bleu-nuit text-white shadow-md">
+    <div class="flex items-center gap-3">
+      <svg class="w-6 h-6 text-or-savoir" viewBox="0 0 48 48" fill="currentColor">
+        <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" />
+      </svg>
+      <h1 class="text-xl font-bold">Myrage Digital</h1>
+    </div>
+    <nav class="hidden md:flex gap-8 text-sm font-medium">
+      <a href="index.html" class="hover:text-or-savoir">Accueil</a>
+      <a href="about.html" class="hover:text-or-savoir">À propos</a>
+      <a href="services.html" class="hover:text-or-savoir">Services</a>
+      <a href="catalog.html" class="text-or-savoir font-semibold">Catalogue</a>
+      <a href="contacts.html" class="hover:text-or-savoir">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <section class="mb-12 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-bleu-nuit mb-4">Notre Catalogue</h2>
+      <p class="max-w-3xl mx-auto text-lg text-vert-congo">
+        Offres de services, formations, produits numériques & réalisations pour booster votre transformation digitale.
+      </p>
+    </section>
+
+    <!-- Grille des Offres -->
+    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Carte Service -->
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-vert-congo mb-3">Développement Web & SaaS</h3>
+        <p class="text-sm text-gray-700 mb-4">Applications sur-mesure, SaaS multi-tenant, intégration cloud (React, PostgreSQL, MongoDB...)</p>
+        <a href="contacts.html" class="button-primary px-4 py-2 rounded-full inline-block text-center">Demander un devis</a>
+      </div>
+
+      <!-- Carte Formation -->
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-vert-congo mb-3">Formations Excel & IA</h3>
+        <p class="text-sm text-gray-700 mb-4">Formation Excel avancé, VBA, Power BI, IA appliquée pour non-techniciens, coaching sur-mesure.</p>
+        <a href="services.html#formations" class="button-primary px-4 py-2 rounded-full inline-block">Voir les modules</a>
+      </div>
+
+      <!-- Carte Produit -->
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-vert-congo mb-3">Produit : GIFA</h3>
+        <p class="text-sm text-gray-700 mb-4">Solution SaaS de gestion avec export PDF, paiements intégrés, version code & abonnement SaaS.</p>
+        <a href="https://wa.me/243990918934" target="_blank" rel="noopener" class="button-primary px-4 py-2 rounded-full inline-block">Obtenir une démo</a>
+      </div>
+
+      <!-- Carte Produit 2 -->
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-vert-congo mb-3">Produit : AgriConnect</h3>
+        <p class="text-sm text-gray-700 mb-4">Plateforme e-commerce agricole avec accès USSD/SMS pour agriculteurs ruraux & interface web.</p>
+        <a href="about.html#agriconnect" class="button-primary px-4 py-2 rounded-full inline-block">Explorer</a>
+      </div>
+
+      <!-- Carte Réalisation -->
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-vert-congo mb-3">Réalisations clés</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+          <li>GIFA – Gestion d’activités + export PDF</li>
+          <li>AgriConnect – E-commerce agricole low-tech</li>
+          <li>LC-CB – Page Facebook IA, Manga & Tech</li>
+        </ul>
+      </div>
+
+      <!-- Carte Bootcamp -->
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-vert-congo mb-3">Bootcamps 5 jours</h3>
+        <p class="text-sm text-gray-700 mb-4">Formations accélérées par WhatsApp ou Zoom : Excel, IA, développement web, marketing digital.</p>
+        <a href="subscribe.html" class="button-primary px-4 py-2 rounded-full inline-block">Recevoir les dates</a>
+      </div>
+    </section>
+
+    <!-- Bouton PDF -->
+    <div class="text-center mt-16">
+      <a href="catalogue.pdf" download class="button-primary px-8 py-3 text-lg rounded-full inline-block">
+        📄 Télécharger le catalogue complet (PDF)
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-bleu-nuit text-white text-center py-6 text-sm mt-10">
+    © 2025 Myrage Digital — Tous droits réservés.
+  </footer>
+  <script src="js/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</body>
+</html>
