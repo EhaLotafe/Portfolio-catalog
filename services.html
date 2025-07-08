@@ -1,172 +1,179 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth" >
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Découvrez les services numériques ultra-performants et animés de Myrage Digital - Développement, formation, SaaS, et plus !" />
-  <title>Myrage Digital | Services Dynamiques & Innovants</title>
+  <title>Services | Myrage Digital</title>
+  <meta name="description" content="Offres stratégiques et numériques de Myrage Digital – Développement Web & SaaS, IA, Automatisation Excel, Formations pratiques et accompagnement tech pour PME, freelances et jeunes en Afrique." />
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Meta réseaux -->
+  <meta property="og:title" content="Services | Myrage Digital" />
+  <meta property="og:description" content="Développement sur-mesure, IA, Excel, bootcamps, consulting pour PME et entrepreneurs africains." />
+  <meta property="og:image" content="https://ton-site.com/assets/service-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Services | Myrage Digital" />
+  <meta name="twitter:description" content="Découvrez nos offres en développement, automatisation, IA et accompagnement digital." />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-  <style>
-    /* Palette intense + animations */
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <!-- Palette personnalisée -->
+<style>
     :root {
-      --or-vif: #ffcc00;
+      --beige-terre: #f5f0e6;
+      --gris-graphite: #333333;
+      --bleu-nuit: #0b1a3f;
+      --blanc-pur: #fefefe;
+      --or-savoir: #ffcc00;
       --rouge-hot: #ff3c3c;
-      --bleu-elec: #0077ff;
-      --noir-foncé: #0a0a0a;
-      --gris-clair: #dddcdc;
     }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-      color: var(--gris-clair);
+      font-family: 'Work Sans', sans-serif;
+      background-color: var(--beige-terre);
+      color: var(--gris-graphite);
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
-
     header {
-      background: var(--noir-foncé);
-      border-bottom: 3px solid var(--or-vif);
-      box-shadow: 0 0 15px var(--or-vif);
+      background-color: var(--bleu-nuit);
+      color: var(--blanc-pur);
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-
-    /* Navigation */
-    nav a {
+    header h1 {
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--or-savoir);
+    }
+    header svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: var(--or-savoir);
+      flex-shrink: 0;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
       font-weight: 600;
-      padding: 0.75rem 1.2rem;
-      border-radius: 12px;
-      transition: all 0.3s ease;
+      font-size: 0.875rem;
+    }
+    nav a {
+      color: var(--blanc-pur);
+      text-decoration: none;
       position: relative;
+      padding: 0.2rem 0;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: var(--gris-clair);
-      text-shadow: 0 0 3px #000;
-      font-family: 'Orbitron', sans-serif;
-      outline-offset: 3px;
+      transition: color 0.3s ease;
     }
     nav a:hover,
-    nav a:focus,
+    nav a:focus {
+      color: var(--or-savoir);
+      outline-offset: 3px;
+      outline-color: var(--or-savoir);
+    }
     nav a[aria-current="page"] {
-      color: var(--or-vif);
-      text-shadow: 0 0 8px var(--or-vif), 0 0 15px var(--or-vif);
-      background: rgba(255, 204, 0, 0.15);
-      box-shadow: 0 0 10px var(--or-vif);
-      outline: none;
+      color: var(--or-savoir);
+      font-weight: 700;
+      border-bottom: 2px solid var(--or-savoir);
+      padding-bottom: 0.15rem;
     }
 
-    /* Hero Title animation */
+    main {
+      max-width: 960px;
+      margin: 3rem auto 5rem auto;
+      padding: 0 1rem;
+    }
+
     h1#services-title {
-      font-family: 'Orbitron', sans-serif;
-      color: var(--or-vif);
-      text-shadow: 0 0 8px var(--or-vif), 0 0 20px var(--or-vif);
-      animation: pulseGlow 2.5s ease-in-out infinite;
-      font-size: 3rem;
-      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--bleu-nuit);
       text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+      margin-bottom: 3rem;
+      letter-spacing: 0.1em;
     }
 
-    @keyframes pulseGlow {
-      0%, 100% {
-        text-shadow: 0 0 10px var(--or-vif), 0 0 20px var(--or-vif);
-        color: var(--or-vif);
-      }
-      50% {
-        text-shadow: 0 0 25px var(--rouge-hot), 0 0 50px var(--rouge-hot);
-        color: var(--rouge-hot);
-      }
+    section.grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
-    /* Cards style */
     .card {
-      background: linear-gradient(145deg, #121212, #1f1f1f);
-      border-radius: 16px;
-      box-shadow:
-        0 0 15px rgba(255, 204, 0, 0.6),
-        inset 0 0 10px rgba(255, 255, 255, 0.05);
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
       padding: 2rem;
-      color: var(--gris-clair);
+      color: var(--gris-graphite);
       font-weight: 500;
-      transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
       cursor: default;
-      -webkit-user-select: none;
-      user-select: none;
-      outline-offset: 4px;
+      outline-offset: 3px;
     }
     .card:hover,
     .card:focus-within {
-      transform: translateY(-12px) rotate(-1deg) scale(1.05);
-      box-shadow:
-        0 0 30px var(--rouge-hot),
-        inset 0 0 20px var(--rouge-hot);
-      color: var(--or-vif);
+      box-shadow: 0 10px 25px rgb(255 204 0 / 0.4);
+      transform: translateY(-8px);
       outline: none;
     }
     .card h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--bleu-nuit);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--or-vif);
-      text-shadow: 0 0 8px var(--or-vif);
-      transition: color 0.3s ease;
-    }
-    .card:hover h2,
-    .card:focus-within h2 {
-      color: var(--rouge-hot);
-      text-shadow: 0 0 12px var(--rouge-hot);
+      letter-spacing: 0.05em;
     }
     .card p {
       font-size: 1rem;
-      line-height: 1.6;
-      color: var(--gris-clair);
-      transition: color 0.3s ease;
-    }
-    .card:hover p,
-    .card:focus-within p {
-      color: var(--or-vif);
+      line-height: 1.5;
+      color: var(--gris-graphite);
     }
 
-    /* Catalogue Button */
     .btn-catalogue {
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
-      background: var(--rouge-hot);
-      color: var(--gris-clair);
+      background-color: var(--or-savoir);
+      color: var(--bleu-nuit);
       font-weight: 700;
       padding: 1rem 2rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       border-radius: 30px;
-      box-shadow: 0 0 12px var(--rouge-hot);
+      box-shadow: 0 0 15px var(--or-savoir);
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       margin: 4rem auto 2rem;
       cursor: pointer;
+      text-decoration: none;
+      user-select: none;
       outline-offset: 4px;
     }
     .btn-catalogue:hover,
     .btn-catalogue:focus {
-      background: var(--or-vif);
-      color: var(--noir-foncé);
-      box-shadow: 0 0 25px var(--or-vif);
+      background-color: #e6b800cc;
+      box-shadow: 0 0 30px var(--or-savoir);
       outline: none;
+      color: var(--bleu-nuit);
     }
     .btn-catalogue svg {
-      width: 28px;
-      height: 28px;
+      width: 24px;
+      height: 24px;
       fill: currentColor;
-      filter: drop-shadow(0 0 3px var(--gris-clair));
       transition: transform 0.3s ease;
     }
     .btn-catalogue:hover svg,
@@ -174,88 +181,93 @@
       transform: rotate(15deg) scale(1.1);
     }
 
-    /* Responsive Grid */
-    main > section.grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+    footer {
+      background-color: var(--bleu-nuit);
+      color: var(--blanc-pur);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      margin-top: 4rem;
+      user-select: none;
     }
 
-    /* Scroll smooth for anchor links */
-    html {
-      scroll-behavior: smooth;
-    }
+    /* Responsive nav hamburger (optionnel, si tu souhaites) */
   </style>
+
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="flex justify-between items-center px-12 py-5 border-b border-yellow-400 bg-black text-gray-200 shadow-lg" role="banner">
-    <div class="flex items-center gap-4" aria-label="Logo Myrage Digital">
-      <svg class="w-7 h-7 text-yellow-400" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true" focusable="false">
-        <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" />
-      </svg>
-      <h1 class="text-2xl font-bold tracking-widest uppercase font-orbitron text-yellow-400 select-none">Myrage Digital</h1>
+
+<!-- HEADER -->
+<header class="bg-[var(--bleu-nuit)] text-white px-6 md:px-10 py-4 flex justify-between items-center shadow">
+  <div class="flex items-center gap-3">
+    <svg class="w-6 h-6 text-[var(--or-savoir)]" viewBox="0 0 48 48" fill="currentColor">
+      <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" />
+    </svg>
+    <h1 class="text-xl font-bold text-[var(--or-savoir)]">Myrage Digital</h1>
+  </div>
+  <nav class="hidden md:flex gap-6 text-sm font-semibold uppercase">
+    <a href="index.html" class="hover:text-[var(--or-savoir)]">Accueil</a>
+    <a href="about.html" class="hover:text-[var(--or-savoir)]">À propos</a>
+    <a href="services.html" class="text-[var(--or-savoir)] border-b-2 border-[var(--or-savoir)] pb-1">Services</a>
+    <a href="projets.html" class="hover:text-[var(--or-savoir)]">Projets</a>
+    <a href="formations.html" class="hover:text-[var(--or-savoir)]">Formations</a>
+    <a href="catalog.html" class="hover:text-[var(--or-savoir)]">Catalogue</a>
+    <a href="contacts.html" class="hover:text-[var(--or-savoir)]">Contact</a>
+  </nav>
+</header>
+
+<!-- CONTENU PRINCIPAL -->
+<main class="max-w-6xl mx-auto px-6 py-16">
+  <section class="text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-bold text-[var(--bleu-nuit)] mb-4">Nos Services Numériques</h2>
+    <p class="text-lg text-[var(--vert-congo)]">Des solutions concrètes pour les PME, entrepreneurs et jeunes en Afrique.</p>
+  </section>
+
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="card">
+      <h2>Développement Web & SaaS</h2>
+      <p>Applications web sur-mesure, plateformes SaaS multi-tenant (React, PostgreSQL, MongoDB), déploiement optimisé sur Vercel / Railway.</p>
     </div>
-    <nav class="flex gap-8 text-sm font-semibold uppercase tracking-wider font-poppins" role="navigation" aria-label="Menu principal">
-      <a href="index.html" class="hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Accueil</a>
-      <a href="services.html" aria-current="page" class="text-yellow-400 underline">Services</a>
-      <a href="catalog.html" class="hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Catalogue</a>
-      <a href="blog.html" class="hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Blog</a>
-      <a href="suscribe.html" class="hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Newsletter</a>
-      <a href="#contact" class="hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Contact</a>
-    </nav>
-  </header>
+    <div class="card">
+      <h2>Automatisation & Excel Pro</h2>
+      <p>Gestion RH, facturation, alertes automatisées, rapports dynamiques sous Excel & VBA. Formules puissantes et tableaux de bord interactifs.</p>
+    </div>
+    <div class="card">
+      <h2>Intelligence Artificielle & Chatbots</h2>
+      <p>Création de chatbots WhatsApp / Cozo, NLP pour automatiser le service client, IA embarquée dans vos apps métiers, IA éthique et locale.</p>
+    </div>
+    <div class="card">
+      <h2>Migration Cloud & Virtualisation</h2>
+      <p>Virtualisation réseau (SDN), Cloud hybride (Google Cloud, Railway, Vercel), sécurité, performance, accompagnement DGRAD / PME locales.</p>
+    </div>
+    <div class="card">
+      <h2>Design UI/UX & Branding localisé</h2>
+      <p>Interfaces modernes, micro-interactions, charte graphique personnalisée aux codes culturels africains, design accessible low-tech.</p>
+    </div>
+    <div class="card">
+      <h2>Intégration de Paiements</h2>
+      <p>Stripe, Airtel Money, M-Pesa et paiements numériques intégrés dans vos apps pour améliorer la conversion client et sécuriser les flux.</p>
+    </div>
+    <div class="card">
+      <h2>Formations & Bootcamps</h2>
+      <p>Excel complet, VBA, IA pour non-dev, création de contenu, marketing digital. Modules flexibles en présentiel, WhatsApp ou Zoom.</p>
+    </div>
+    <div class="card">
+      <h2>Accompagnement Startups & Coopératives</h2>
+      <p>Coaching technique, stratégie MVP, structuration de l’offre numérique, prototypage rapide et culture produit pour porteurs de projets africains.</p>
+    </div>
+  </section>
 
-  <!-- Main -->
-  <main class="py-20 px-6 max-w-screen-xl mx-auto" role="main" aria-labelledby="services-title">
-    <h1 id="services-title" data-aos="fade" class="mb-16">NOS SERVICES & OFFRES NUMÉRIQUES</h1>
+  <div class="text-center mt-16">
+    <a href="catalogue.pdf" class="button-primary text-lg">📄 Télécharger notre catalogue complet</a>
+  </div>
+</main>
 
-    <section class="grid" data-aos="fade-up" data-aos-delay="200" aria-label="Liste des services proposés">
-      <article class="card" tabindex="0">
-        <h2>Développement Web & SaaS</h2>
-        <p>Sites vitrines, plateformes SaaS multi-tenant avec React, Tailwind, PostgreSQL/MongoDB, déployées sur Vercel et Railway pour une scalabilité optimale.</p>
-      </article>
-      <article class="card" tabindex="0">
-        <h2>Automatisation & Reporting</h2>
-        <p>Automatisation avancée avec Excel/VBA et reporting dynamique via Power BI, facilitant la prise de décision et l’optimisation des processus métiers.</p>
-      </article>
-      <article class="card" tabindex="0">
-        <h2>Migration Cloud & Virtualisation Réseau</h2>
-        <p>Conseil stratégique et mise en œuvre de migration vers le cloud, virtualisation des infrastructures réseaux pour une meilleure agilité et sécurité.</p>
-      </article>
-      <article class="card" tabindex="0">
-        <h2>Design UX/UI & Branding Localisé</h2>
-        <p>Création de chartes graphiques, interfaces utilisateur ergonomiques et animations adaptées aux contextes culturels africains, assurant engagement et fidélisation.</p>
-      </article>
-      <article class="card" tabindex="0">
-        <h2>Intégration de Paiements</h2>
-        <p>Solutions sécurisées d’intégration Stripe, Airtel Money, M-Pesa pour faciliter les transactions digitales locales et internationales.</p>
-      </article>
-      <article class="card" tabindex="0">
-        <h2>Formations & Coaching Tech</h2>
-        <p>Formations Excel (bases à avancé), initiation IA, bootcamps intensifs, et coaching personnalisé pour porteurs de projets et freelances.</p>
-      </article>
-    </section>
-
-    <section aria-label="Téléchargement du catalogue Myrage Digital" class="text-center">
-      <a href="/docs/catalogue-myrage-digital.pdf" target="_blank" rel="noopener noreferrer" class="btn-catalogue" data-aos="zoom-in" data-aos-delay="400" aria-label="Télécharger le catalogue PDF complet de Myrage Digital">
-        <svg viewBox="0 0 256 256" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" class="inline-block align-middle">
-          <path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z" />
-        </svg>
-        Télécharger le catalogue PDF
-      </a>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-black text-yellow-400 text-center py-6 mt-24 font-poppins font-semibold tracking-widest" role="contentinfo">
-    © 2025 Myrage Digital — Tous droits réservés.
-  </footer>
-
-  <script>
+<!-- FOOTER -->
+<footer class="bg-[var(--bleu-nuit)] text-white text-center py-6 text-sm mt-10">
+  © 2025 Myrage Digital – Tous droits réservés.
+</footer>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
       if ('AOS' in window) {
         AOS.init({

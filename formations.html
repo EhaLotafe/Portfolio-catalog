@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formations – Myrage Digital</title>
+  <meta name="description" content="Modules et bootcamps proposés par Manasse Lotafe – Formations Excel, IA, développement, création de contenu et coaching." />
+  <meta property="og:title" content="Formations – Myrage Digital" />
+  <meta property="og:description" content="Découvrez les formations pratiques et bootcamps proposés pour PME, jeunes et entrepreneurs." />
+  <meta property="og:image" content="https://ton-site.com/assets/formations-preview.jpg" />
+  
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography" defer></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+
+  <style>
+    :root {
+      --bleu-nuit: #101418;
+      --vert-congo: #2a9d8f;
+      --beige-terre: #f5f0e6;
+      --or-savoir: #ffb703;
+      --gris-graphite: #333333;
+      --blanc-pur: #f9f9f9;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: var(--beige-terre);
+      color: var(--gris-graphite);
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    header, footer {
+      background-color: var(--bleu-nuit);
+      color: var(--blanc-pur);
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    header {
+      position: sticky; top:0; z-index:999;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2.5rem;
+    }
+
+    footer {
+      text-align:center; padding:1rem; margin-top:4rem;
+      font-size:0.875rem;
+    }
+
+    nav a {
+      color: var(--blanc-pur);
+      text-decoration:none;
+      padding:0.2rem 0;
+      text-transform:uppercase;
+      font-weight:bold;
+      transition: color .3s;
+    }
+
+    nav a:hover, nav a:focus {
+      color: var(--or-savoir);
+    }
+
+    nav a[aria-current="page"] {
+      color: var(--or-savoir);
+      border-bottom:2px solid var(--or-savoir);
+      padding-bottom:0.15rem;
+    }
+
+    main {
+      max-width:1024px; margin:0 auto; padding:0 1rem 4rem;
+    }
+
+    .hero {
+      text-align: center;
+      background-color: var(--bleu-nuit);
+      color: var(--blanc-pur);
+      padding: 4rem 1rem 3rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--or-savoir);
+      font-weight: 500;
+    }
+
+    .btn-catalogue {
+      background-color: var(--or-savoir);
+      color: var(--bleu-nuit);
+      font-weight: 700;
+      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
+      margin-top: 1.5rem;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-catalogue:hover {
+      background-color: #e09c00;
+    }
+
+    section.module {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section.module:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(255,183,3,0.35);
+    }
+
+    section.module h3 {
+      font-size: 1.5rem;
+      color: var(--or-savoir);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      background-color: var(--vert-congo);
+      color: white;
+      border-radius: 9999px;
+      padding: 0.25rem 0.75rem;
+      margin-left: auto;
+    }
+
+    section.module ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      color: var(--gris-graphite);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: var(--or-savoir);
+      color: var(--bleu-nuit);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #e6a403;
+    }
+
+    @media (min-width:768px) {
+      main {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header role="banner">
+    <div class="flex items-center gap-3">
+      <svg aria-hidden="true" viewBox="0 0 48 48" class="w-6 h-6 text-[var(--or-savoir)]"><path d="M4 4H17.33V17.33H30.66V30.66H44V44H4Z"/></svg>
+      <h1>Myrage Digital</h1>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="competences.html">Compétences</a>
+      <a href="services.html">Services</a>
+      <a href="formations.html" aria-current="page">Formations</a>
+      <a href="projets.html">Projets</a>
+      <a href="contacts.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-down">
+    <h2>📚 Formations & Bootcamps</h2>
+    <p>Des modules concrets pour renforcer vos compétences numériques et personnelles</p>
+    <a href="catalogue.pdf" class="btn-catalogue">📥 Télécharger le catalogue</a>
+  </section>
+
+  <main role="main">
+    <section class="module" data-aos="fade-up" data-aos-delay="100">
+      <h3>📊 Excel complet & VBA <span class="badge">Populaire</span></h3>
+      <ul>
+        <li>Formules avancées, TCD, automatisation</li>
+        <li>Macros, alertes, interface RH</li>
+        <li>Gestion fiscale et facturation intelligente</li>
+      </ul>
+    </section>
+
+    <section class="module" data-aos="fade-up" data-aos-delay="150">
+      <h3>📈 Power BI & Reporting</h3>
+      <ul>
+        <li>Dashboards dynamiques & interactifs</li>
+        <li>Connexion à Excel, SQL, CSV</li>
+        <li>Analyse visuelle pour PME & décisionnaires</li>
+      </ul>
+    </section>
+
+    <section class="module" data-aos="fade-up" data-aos-delay="200">
+      <h3>🤖 Introduction à l’IA pour non-dev</h3>
+      <ul>
+        <li>Concepts clés, outils IA accessibles</li>
+        <li>Cas d’usage : automatisation, bots, Cozo</li>
+        <li>Limites et éthique de l’IA appliquée</li>
+      </ul>
+    </section>
+
+    <section class="module" data-aos="fade-up" data-aos-delay="250">
+      <h3>🎨 Création de contenu & Réseaux sociaux</h3>
+      <ul>
+        <li>Canva, storytelling, rédaction persuasive</li>
+        <li>Calendrier éditorial & stratégie engagement</li>
+      </ul>
+    </section>
+
+    <section class="module" data-aos="fade-up" data-aos-delay="300">
+      <h3>🌍 Gestion numérique pour jeunes & coopératives</h3>
+      <ul>
+        <li>Suivi simple de stock, ventes & clients</li>
+        <li>Digitalisation locale avec outils adaptés</li>
+      </ul>
+    </section>
+
+    <section class="module" data-aos="fade-up" data-aos-delay="350">
+      <h3>🧠 Développement personnel & foi chrétienne</h3>
+      <ul>
+        <li>Motivation, gestion du stress, vision long terme</li>
+        <li>Valeurs chrétiennes et action concrète</li>
+      </ul>
+    </section>
+
+    <section class="module" data-aos="fade-up" data-aos-delay="400">
+      <h3>🎓 Aide aux étudiants</h3>
+      <ul>
+        <li>Méthodologie mémoire, orientation, productivité</li>
+        <li>Conseils personnalisés pour réussir à l’UNILU</li>
+      </ul>
+      <a href="contacts.html" class="btn-primary" aria-label="Demander accompagnement">👋 Demander un accompagnement</a>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    © 2025 Myrage Digital — Tous droits réservés.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if('AOS' in window) AOS.init({duration:800, once:true});
+    });
+  </script>
+</body>
+</html>

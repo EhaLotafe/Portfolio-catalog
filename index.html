@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Manasse Lotafe - Développeur & Formateur Tech spécialisé en solutions numériques, coaching et transformation digitale pour PME." />
-  <meta property="og:title" content="Manasse Lotafe | Tech Trainer & Digital Builder" />
-  <meta property="og:description" content="Développeur, Formateur et Consultant Tech en RDC. Accompagne les entreprises et talents vers la digitalisation." />
+  <meta name="description" content="Manasse Lotafe – Tech Innovateur Visionnaire & Consultant IA. Solutions numériques pour PME, startups et jeunes en Afrique." />
+  <meta property="og:title" content="Overcome Solution’s | Code utile & Impact local" />
+  <meta property="og:description" content="Développement, IA, formation, automatisation. Par Manasse Lotafe – Pour l’Afrique numérique de demain." />
   <meta property="og:image" content="https://mon-site.com/assets/preview.png" />
-  <title>Manasse Lotafe | Portfolio</title>
+  <title>Overcome Solution’s | Manasse Lotafe</title>
 
   <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,34 +24,37 @@
   <header role="banner" class="nav-container">
     <div class="nav-brand">
       <span class="logo-icon" aria-hidden="true">🟨</span>
-      <span class="logo-text">Myrage Digital</span>
+      <span class="logo-text">Overcome Solution’s</span>
     </div>
-    <nav class="nav-links" role="navigation" aria-label="Menu principal">
+    <nav class="nav-links" id="main-nav" role="navigation" aria-label="Menu principal">
       <a href="index.html" aria-current="page">Accueil</a>
       <a href="about.html">À propos</a>
       <a href="services.html">Services</a>
       <a href="catalog.html">Catalogue</a>
+      <a href="projets.html">Projets</a>
+      <a href="formations.html">Formations</a>
       <a href="blog.html">Blog</a>
-      <a href="suscribe.html">Newsletter</a>
-      <a href="#contact">Contact</a>
+      <a href="contacts.html">Contact</a>
     </nav>
-    <a href="contacts.html" class="button-primary">Me contacter</a>
+    <button class="hamburger" id="hamburger-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <!-- Hero Section -->
   <section class="hero-bg" role="region" aria-label="Présentation">
     <div class="hero-content" data-aos="fade-up">
-      <h1>Empowering Developers, One Line of Code at a Time</h1>
-      <p>Développeur et formateur passionné, je vous accompagne dans la maîtrise des technologies web, la productivité et la transformation digitale.</p>
-      <a href="#about" class="button-accent" role="button">Découvrir mon parcours</a>
+      <h1>Du Code. Du Sens. Du Progrès.</h1>
+      <p>Je développe des solutions concrètes pour les PME, étudiants et porteurs de projets en Afrique. Impact, automatisation, IA, formation — en toute simplicité.</p>
+      <a href="#contact" class="button-accent" role="button">Contact WhatsApp</a>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="section-light" data-aos="fade-up" role="region" aria-labelledby="about-title">
     <div class="container">
-      <h2 id="about-title">À propos de moi</h2>
-      <p>Je suis <strong>Manasse Lotafe</strong>, développeur basé à Lubumbashi, formateur en outils numériques, et fondateur de Myrage Digital. Ma mission : aider les talents et PME africains à s’approprier la technologie pour créer, vendre, automatiser et impacter.</p>
+      <h2 id="about-title">À propos</h2>
+      <p>Je suis <strong>Manasse Lotafe</strong>, développeur full stack, consultant IA, formateur numérique. Je conçois des outils simples et puissants pour accélérer la transformation digitale en RDC. Je crois au code utile, au progrès local, et à la transmission des compétences.</p>
     </div>
   </section>
 
@@ -59,18 +62,18 @@
   <section id="services" class="section-dark" data-aos="fade-up" role="region" aria-labelledby="services-title">
     <div class="container">
       <h2 id="services-title">Mes services</h2>
-      <div class="cards">
-        <article class="card" tabindex="0">
-          <h3>Développement Web</h3>
-          <p>Sites vitrines, plateformes web, applications mobiles progressives. Solutions scalables, performantes et accessibles.</p>
+      <div class="cards" role="list">
+        <article class="card" tabindex="0" role="listitem">
+          <h3>Développement sur mesure</h3>
+          <p>Applications web ou desktop personnalisées, SaaS, systèmes RH, solutions pour écoles, PME, institutions.</p>
         </article>
-        <article class="card" tabindex="0">
-          <h3>Formations sur mesure</h3>
-          <p>Excel, Power BI, IA, HTML/CSS/JS, React. Méthodologie adaptée aux débutants et avancés, avec des résultats mesurables.</p>
+        <article class="card" tabindex="0" role="listitem">
+          <h3>Formations & Bootcamps</h3>
+          <p>Modules sur Excel, Power BI, IA appliquée, gestion numérique, soft skills et code utile pour tous niveaux.</p>
         </article>
-        <article class="card" tabindex="0">
-          <h3>Coaching Tech</h3>
-          <p>Orientation professionnelle, projet de migration numérique, accompagnement de PME vers la digitalisation.</p>
+        <article class="card" tabindex="0" role="listitem">
+          <h3>Coaching Tech & IA</h3>
+          <p>Accompagnement de porteurs de projets, automatisation de tâches, structuration de startup et intégration IA.</p>
         </article>
       </div>
     </div>
@@ -80,7 +83,7 @@
   <section id="training" class="section-light" data-aos="fade-up" role="region" aria-labelledby="training-title">
     <div class="container">
       <h2 id="training-title">Formations & Coaching</h2>
-      <p>Bootcamps intensifs, programmes hybrides (WhatsApp/Zoom), vidéos tutorielles et parcours guidés pour aider étudiants, entrepreneurs et salariés à maîtriser les outils les plus demandés.</p>
+      <p>Bootcamps WhatsApp, vidéos tutoriels, défis concrets, accompagnement à distance : une pédagogie accessible, ancrée localement, et tournée vers l’autonomie numérique.</p>
     </div>
   </section>
 
@@ -88,7 +91,9 @@
   <section id="contact" class="section-light" data-aos="fade-up" role="region" aria-labelledby="contact-title">
     <div class="container">
       <h2 id="contact-title">Contactez-moi</h2>
-      <form class="contact-form" aria-label="Formulaire de contact Myrage Digital">
+      <p>📞 WhatsApp : <a href="https://wa.me/243990918934" target="_blank" rel="noopener noreferrer">+243 990 918 934</a></p>
+      <p>📧 Email : <a href="mailto:overcomeeha@gmail.com">overcomeeha@gmail.com</a></p>
+      <form class="contact-form" aria-label="Formulaire de contact Overcome Solution’s">
         <label for="name" class="sr-only">Nom</label>
         <input id="name" type="text" placeholder="Nom" required autocomplete="name" />
 
@@ -105,14 +110,26 @@
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
-    © 2025 Manasse Lotafe. Tous droits réservés. |
-    <a href="https://linkedin.com/in/..." target="_blank" rel="noopener">LinkedIn</a>
+    © 2025 Overcome Solution’s – Manasse Lotafe. Tous droits réservés. |
+    <a href="https://linkedin.com/in/..." target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+    <a href="https://github.com/EhaLotafe" target="_blank" rel="noopener noreferrer">GitHub</a>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       AOS.init();
 
+      // Hamburger menu toggle
+      const hamburger = document.getElementById('hamburger-btn');
+      const navLinks = document.getElementById('main-nav');
+
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('open');
+      });
+
+      // Contact form validation and submission simulation
       const form = document.querySelector('.contact-form');
       const nameInput = form.querySelector('#name');
       const emailInput = form.querySelector('#email');
@@ -126,7 +143,6 @@
           return;
         }
 
-        // Validation email simple
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(emailInput.value)) {
           alert('Adresse email invalide.');
@@ -134,21 +150,20 @@
           return;
         }
 
-        // Simulation d'envoi
-        e.target.querySelector('button').disabled = true;
-        e.target.querySelector('button').textContent = 'Envoi en cours...';
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Envoi en cours...';
 
-        // Ici : remplacer par envoi réel (ex: API Formspree, backend)
         setTimeout(() => {
-          alert('Merci pour votre message. Je reviens vers vous rapidement !');
+          alert('Message bien reçu. Je reviendrai vers vous rapidement !');
           form.reset();
-          e.target.querySelector('button').disabled = false;
-          e.target.querySelector('button').textContent = 'Envoyer';
+          submitButton.disabled = false;
+          submitButton.textContent = 'Envoyer';
         }, 1500);
       });
     });
   </script>
-  <script src="js/main.js" defer></script>
 
+  <script src="js/main.js" defer></script>
 </body>
 </html>

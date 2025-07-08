@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Contactez Myrage Digital - Tech Trainer pour vos projets numériques, formations et conseils en transformation digitale." />
-  <title>Contact - Myrage Digital | Tech Trainer</title>
+  <title>Contact – Myrage Digital | Tech Trainer</title>
   <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography" defer></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <style>
     :root {
       --bleu-nuit: #101418;
@@ -23,14 +26,8 @@
       color: var(--gris-graphite);
       font-family: 'Work Sans', 'Noto Sans', sans-serif;
     }
-    a {
-      color: var(--vert-congo);
-      text-decoration: none;
-    }
-    a:hover {
-      color: var(--or-savoir);
-      text-decoration: underline;
-    }
+    a { color: var(--vert-congo); text-decoration: none; }
+    a:hover { color: var(--or-savoir); text-decoration: underline; }
     .bg-bleu-nuit { background-color: var(--bleu-nuit); }
     .bg-blanc-pur { background-color: var(--blanc-pur); }
     .text-blanc-pur { color: var(--blanc-pur); }
@@ -40,83 +37,99 @@
     .bg-or-savoir { background-color: var(--or-savoir); }
     .hover\:bg-vert-congo:hover { background-color: var(--vert-congo); }
     .border-gris-graphite { border-color: var(--gris-graphite); }
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: var(--vert-congo);
+      color: white;
+      padding: 0.75rem;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .floating-whatsapp:hover {
+      background-color: var(--or-savoir);
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
   <header class="bg-bleu-nuit text-blanc-pur shadow-md px-6 py-4 flex justify-between items-center">
     <div class="flex items-center gap-3">
       <svg class="w-8 h-8 text-or-savoir" viewBox="0 0 48 48" fill="currentColor"><path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"/></svg>
       <h1 class="text-xl font-bold">Myrage Digital</h1>
     </div>
     <nav class="hidden md:flex gap-6 text-sm font-semibold">
-      <a href="index.html" class="hover:text-or-savoir">Accueil</a>
-      <a href="about.html" class="hover:text-or-savoir">À propos</a>
-      <a href="services.html" class="hover:text-or-savoir">Services</a>
-      <a href="catalog.html" class="hover:text-or-savoir">Catalogue</a>
-      <a href="blog.html" class="hover:text-or-savoir">Blog</a>
-      <a href="suscribe.html" class="hover:text-or-savoir">Newsletter</a>
-      <a href="contacts.html" class="text-or-savoir underline font-bold">Contact</a>
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="formations.html">Formations</a>
+      <a href="projets.html">Projets</a>
+      <a href="contacts.html" aria-current="page" class="text-or-savoir underline font-bold">Contact</a>
     </nav>
   </header>
 
-  <main class="flex-grow py-12 px-4 sm:px-6 md:px-12 flex justify-center">
-    <div class="w-full max-w-3xl bg-blanc-pur p-6 sm:p-8 md:p-12 rounded-xl shadow-xl">
+  <!-- Main -->
+  <main class="flex-grow py-16 px-4 sm:px-6 md:px-12 flex justify-center" data-aos="fade-up">
+    <div class="w-full max-w-3xl bg-blanc-pur p-6 sm:p-10 rounded-xl shadow-xl">
       <section class="mb-10 text-center">
-        <h1 class="text-3xl sm:text-4xl font-bold text-bleu-nuit mb-4">Contactez-moi</h1>
-        <p class="text-base sm:text-lg text-vert-congo">Je suis disponible pour discuter de vos projets, formations ou collaborations.</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-bleu-nuit mb-4">Discutons de votre projet</h1>
+        <p class="text-base sm:text-lg text-vert-congo">Disponible pour collaborations, prestations ou coaching personnalisé.</p>
       </section>
 
-      <form id="contact-form" method="POST" action="https://formspree.io/f/mwkzljrj" class="space-y-6" aria-label="Formulaire de contact Myrage Digital">
+      <form id="contact-form" method="POST" action="https://formspree.io/f/mwkzljrj" class="space-y-6">
         <div>
-          <label for="name" class="block text-bleu-nuit font-semibold mb-2">Nom complet</label>
-          <input id="name" name="name" type="text" required placeholder="Votre nom" class="w-full p-4 rounded-xl bg-beige-terre border border-gris-graphite placeholder-vert-congo focus:ring focus:ring-or-savoir focus:outline-none" />
+          <label for="name" class="block font-semibold text-bleu-nuit mb-1">Nom complet</label>
+          <input type="text" id="name" name="name" required placeholder="Votre nom" class="w-full p-4 bg-beige-terre border border-gris-graphite rounded-lg placeholder-vert-congo focus:ring focus:ring-or-savoir" />
         </div>
-
         <div>
-          <label for="email" class="block text-bleu-nuit font-semibold mb-2">Adresse email</label>
-          <input id="email" name="email" type="email" required placeholder="votre.email@exemple.com" class="w-full p-4 rounded-xl bg-beige-terre border border-gris-graphite placeholder-vert-congo focus:ring focus:ring-or-savoir focus:outline-none" />
+          <label for="email" class="block font-semibold text-bleu-nuit mb-1">Email</label>
+          <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com" class="w-full p-4 bg-beige-terre border border-gris-graphite rounded-lg placeholder-vert-congo focus:ring focus:ring-or-savoir" />
         </div>
-
         <div>
-          <label for="message" class="block text-bleu-nuit font-semibold mb-2">Message</label>
-          <textarea id="message" name="message" rows="6" required placeholder="Votre message ici..." class="w-full p-4 rounded-xl bg-beige-terre border border-gris-graphite placeholder-vert-congo focus:ring focus:ring-or-savoir focus:outline-none resize-none"></textarea>
+          <label for="message" class="block font-semibold text-bleu-nuit mb-1">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Votre message ici..." class="w-full p-4 bg-beige-terre border border-gris-graphite rounded-lg placeholder-vert-congo resize-none focus:ring focus:ring-or-savoir"></textarea>
         </div>
 
         <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
 
-        <button type="submit" class="w-full py-3 bg-or-savoir text-blanc-pur font-bold rounded-full hover:bg-vert-congo transition duration-300 flex items-center justify-center">
-          <span>Envoyer le message</span>
-          <span id="loader" class="ml-2 hidden">
-            <svg class="animate-spin w-5 h-5 text-blanc-pur" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
-            </svg>
-          </span>
+        <button type="submit" class="w-full py-3 bg-or-savoir text-bleu-nuit font-bold rounded-full hover:bg-vert-congo transition duration-300 flex items-center justify-center">
+          <span>Envoyer</span>
+          <svg id="loader" class="ml-2 hidden animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+          </svg>
         </button>
         <div id="feedback" class="text-center text-sm mt-4"></div>
       </form>
 
-      <section class="mt-12">
-        <h2 class="text-2xl font-bold text-bleu-nuit mb-4">Informations de contact</h2>
-        <div class="space-y-6 text-bleu-nuit">
-          <div class="flex gap-4">
-            <svg class="w-6 h-6 text-or-savoir mt-1" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5zm18-2H3a2 2 0 00-2 2v14a2 2 0 002 2h18a2 2 0 002-2V5a2 2 0 00-2-2zM7 10h10v2H7v-2z" /></svg>
-            <div><strong>Email :</strong> <a href="mailto:overcomeeha@gmail.com">overcomeeha@gmail.com</a><br/><small class="text-vert-congo">Réponse sous 24h</small></div>
-          </div>
-          <div class="flex gap-4">
-            <svg class="w-6 h-6 text-or-savoir mt-1" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.054 15.054 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.49 2.53.76 3.88.76a1 1 0 011 1v3.5a1 1 0 01-1 1C7.82 20.37 3.63 16.18 3.63 10a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.26 2.67.76 3.88a1 1 0 01-.27 1.11l-2.2 2.2z"/></svg>
-            <div><strong>Téléphone :</strong> <a href="tel:+243990918934">+243 990 918 934</a><br/><small class="text-vert-congo">Disponible 9h - 17h</small></div>
-          </div>
-        </div>
+      <section class="mt-12 space-y-4 text-bleu-nuit" data-aos="fade-in">
+        <h2 class="text-2xl font-bold mb-2">Mes coordonnées</h2>
+        <p><strong>Email :</strong> <a href="mailto:overcomeeha@gmail.com">overcomeeha@gmail.com</a> <br /><small class="text-vert-congo">Réponse sous 24h</small></p>
+        <p><strong>Téléphone :</strong> <a href="tel:+243990918934">+243 990 918 934</a><br /><small class="text-vert-congo">Disponible de 9h à 17h</small></p>
+        <p><strong>WhatsApp Direct :</strong> <a href="https://wa.me/243990918934" target="_blank" rel="noopener">+243 990 918 934</a></p>
       </section>
     </div>
   </main>
 
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/243990918934" class="floating-whatsapp" aria-label="Contact WhatsApp" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M20.52 3.48A11.76 11.76 0 0 0 2.24 16.71L1 23l6.45-1.7A11.76 11.76 0 0 0 20.52 3.48ZM12 20.4a9.6 9.6 0 0 1-4.9-1.34l-.35-.2-3.84 1 .95-3.74-.24-.37a9.57 9.57 0 1 1 8.38 4.65Zm5.22-7.15c-.29-.14-1.71-.84-1.98-.93s-.46-.14-.66.14-.76.93-.93 1.12-.34.21-.63.07a7.9 7.9 0 0 1-2.34-1.43 8.74 8.74 0 0 1-1.62-2.01c-.17-.29 0-.45.13-.6.13-.14.29-.34.44-.51a2 2 0 0 0 .29-.48.56.56 0 0 0 0-.51c-.07-.14-.66-1.59-.91-2.2s-.48-.51-.66-.52h-.56a1.08 1.08 0 0 0-.78.36 3.27 3.27 0 0 0-1 2.42 5.7 5.7 0 0 0 1.19 2.59c.14.2 2 3.18 4.84 4.46.68.29 1.21.46 1.63.59a4 4 0 0 0 1.51.1c.46-.07 1.42-.58 1.63-1.13s.21-1.05.15-1.14-.26-.21-.55-.35Z"/></svg>
+  </a>
+
+  <!-- Footer -->
   <footer class="bg-bleu-nuit text-center text-sm text-blanc-pur py-6">
     © 2025 Myrage Digital – Tous droits réservés.
   </footer>
 
+  <!-- JS Scripts -->
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if ('AOS' in window) AOS.init({ duration: 800, once: true });
+    });
+
     document.getElementById('contact-form').addEventListener('submit', async function (e) {
       e.preventDefault();
       const form = e.target;
@@ -133,18 +146,16 @@
           headers: { 'Accept': 'application/json' }
         });
         if (!response.ok) throw new Error('Erreur lors de l’envoi.');
-        feedback.textContent = 'Merci pour votre message. Nous vous répondrons rapidement !';
-        feedback.className = 'text-green-700';
+        feedback.textContent = '✅ Merci ! Votre message a bien été envoyé.';
+        feedback.className = 'text-green-600 font-semibold';
         form.reset();
       } catch (err) {
-        feedback.textContent = 'Une erreur est survenue. Veuillez réessayer.';
-        feedback.className = 'text-red-700';
+        feedback.textContent = '❌ Une erreur est survenue. Veuillez réessayer.';
+        feedback.className = 'text-red-600 font-semibold';
       } finally {
         loader.classList.add('hidden');
       }
     });
   </script>
-  <script src="js/main.js" defer></script>
-
 </body>
 </html>

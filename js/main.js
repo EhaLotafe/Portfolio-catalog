@@ -132,4 +132,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (/Mobi|Android/i.test(navigator.userAgent)) {
     console.log('✅ Mobile détecté');
   }
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger-btn');
+  const navLinks = document.getElementById('main-nav');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+  }
 });

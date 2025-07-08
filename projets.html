@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projets – Myrage Digital</title>
+  <meta name="description" content="Projets réalisés et en cours par Manasse Lotafe – Developpeur full‑stack, IA, formation & innovation." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projets – Myrage Digital" />
+  <meta property="og:description" content="Découvrez les projets web, mobile, IA et bureautique développés par Manasse Lotafe." />
+  <meta property="og:image" content="https://ton-site.com/assets/projets-preview.jpg" />
+
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography" defer></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+
+  <style>
+    :root {
+      --bleu-nuit: #101418;
+      --vert-congo: #2a9d8f;
+      --beige-terre: #f5f0e6;
+      --or-savoir: #ffb703;
+      --gris-graphite: #333333;
+      --blanc-pur: #f9f9f9;
+      --rouge-kinois: #d62828;
+    }
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: var(--beige-terre);
+      color: var(--gris-graphite);
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+    header, footer {
+      background-color: var(--bleu-nuit);
+      color: var(--blanc-pur);
+      user-select: none;
+    }
+    header {
+      position: sticky; top:0; z-index:999;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2.5rem;
+    }
+    footer {
+      text-align:center; padding:1rem; margin-top:4rem;
+      font-size:0.875rem;
+    }
+    nav a {
+      color: var(--blanc-pur);
+      text-decoration:none;
+      padding:0.2rem 0;
+      text-transform:uppercase;
+      font-weight:bold;
+      transition: color .3s;
+    }
+    nav a:hover, nav a:focus {
+      color: var(--or-savoir);
+      outline: none;
+      text-decoration: underline;
+    }
+    nav a[aria-current="page"] {
+      color: var(--or-savoir);
+      border-bottom:2px solid var(--or-savoir);
+      padding-bottom:0.15rem;
+    }
+    main {
+      max-width:1024px; margin:3rem auto; padding:0 1rem;
+    }
+    .intro {
+      text-align:center; margin-bottom:2rem;
+    }
+    .grid {
+      display:grid; 
+      gap:2rem; 
+      grid-template-columns:1fr;
+    }
+    @media (min-width:768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .project-card {
+      background:white; border-radius:12px; padding:1.5rem;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition:transform .3s, box-shadow .3s;
+      display: flex; flex-direction: column;
+      cursor: default;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(255,183,3,0.4);
+    }
+    .project-card h3 {
+      font-size:1.25rem; color:var(--vert-congo); margin-bottom:0.5rem;
+    }
+    .project-image {
+      border-radius: 8px;
+      object-fit: cover;
+      width: 100%;
+      height: 160px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+    .project-desc {
+      flex-grow: 1;
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 0.75rem;
+    }
+    .links {
+      margin-bottom: 1rem;
+    }
+    .links a {
+      color: var(--rouge-kinois);
+      font-weight: 600;
+      margin-right: 1rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .links a:hover, .links a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+    .progress-container {
+      background: #eee;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 0.75rem 0;
+      height: 14px;
+    }
+    .progress-bar {
+      height: 14px;
+      background: var(--or-savoir);
+      width: 0;
+      transition: width 0.75s ease-in-out;
+    }
+    small {
+      font-size: 0.85rem;
+      color: var(--gris-graphite);
+      font-weight: 600;
+    }
+    .skills {
+      margin-top: 1rem;
+    }
+    .skill {
+      margin-bottom: 0.6rem;
+    }
+    .skill-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: var(--bleu-nuit);
+    }
+    .skill-bar-container {
+      background: #ddd;
+      border-radius: 5px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .skill-bar {
+      height: 10px;
+      background: var(--vert-congo);
+      width: 0;
+      transition: width 0.75s ease-in-out;
+    }
+    .btn-detail {
+      margin-top: auto;
+      align-self: flex-start;
+      background-color: var(--or-savoir);
+      color: var(--bleu-nuit);
+      font-weight: 700;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+      font-size: 0.95rem;
+    }
+    .btn-detail:hover,
+    .btn-detail:focus {
+      background-color: var(--vert-congo);
+      color: white;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="flex items-center gap-3">
+      <svg aria-hidden="true" viewBox="0 0 48 48" class="w-6 h-6 text-[var(--or-savoir)]" focusable="false">
+        <path d="M4 4H17.33V17.33H30.66V30.66H44V44H4Z"/>
+      </svg>
+      <h1>Myrage Digital</h1>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="catalog.html">Catalogue</a>
+      <a href="projets.html" aria-current="page">Projets</a>
+      <a href="contacts.html">Contact</a>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section class="intro" data-aos="fade-down">
+      <h2 class="text-4xl font-bold text-[var(--bleu-nuit)]">Projets réalisés & en cours</h2>
+      <p>Valorisation de projets web, mobile, Excel et IA pour un impact local fort.</p>
+    </section>
+
+    <section class="grid">
+      <!-- Projet 1 -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="100" tabindex="0">
+        <img
+          src="https://via.placeholder.com/400x160.png?text=CityLinker"
+          alt="CityLinker - Annuaire digital local"
+          class="project-image"
+          loading="lazy"
+        />
+        <h3>CityLinker (en cours)</h3>
+        <p class="project-desc">
+          Annuaire digital local avec messagerie en temps réel via Django Channels, recherche avancée Elasticsearch, optimisation UX.
+        </p>
+        <div class="links">
+          <a href="https://github.com/monrepo/citylinker" target="_blank" rel="noopener" aria-label="Voir le code GitHub de CityLinker">GitHub</a>
+          <a href="https://demo.citylinker.com" target="_blank" rel="noopener" aria-label="Voir la démo de CityLinker">Démo</a>
+        </div>
+        <div class="progress-container" aria-label="Progression du projet CityLinker">
+          <div class="progress-bar" data-complete="60"></div>
+        </div>
+        <small>60% complété</small>
+
+        <div class="skills" aria-label="Compétences utilisées pour CityLinker">
+          <div class="skill">
+            <div class="skill-name">Django</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Elasticsearch</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 60%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">React (front)</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 55%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <a href="projets-details/citylinker.html" class="btn-detail" aria-label="Voir le détail complet du projet CityLinker">Voir détail</a>
+      </article>
+
+      <!-- Projet 2 -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="200" tabindex="0">
+        <img
+          src="https://via.placeholder.com/400x160.png?text=Overcome+Formation"
+          alt="Plateforme Overcome Formation"
+          class="project-image"
+          loading="lazy"
+        />
+        <h3>Overcome Formation</h3>
+        <p class="project-desc">
+          Plateforme e-learning avec modules de cours, calendrier d'événements, blog pédagogique, gestion des témoignages et feedbacks.
+        </p>
+        <div class="links">
+          <a href="https://github.com/monrepo/overcome-formation" target="_blank" rel="noopener" aria-label="Voir le code GitHub de Overcome Formation">GitHub</a>
+          <a href="https://formation.myragedigital.com" target="_blank" rel="noopener" aria-label="Voir la démo de Overcome Formation">Démo</a>
+        </div>
+        <div class="progress-container" aria-label="Progression du projet Overcome Formation">
+          <div class="progress-bar" data-complete="50"></div>
+        </div>
+        <small>50% complété</small>
+
+        <div class="skills" aria-label="Compétences utilisées pour Overcome Formation">
+          <div class="skill">
+            <div class="skill-name">Vue.js</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 65%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Firebase</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Tailwind CSS</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 75%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <a href="projets-details/overcome-formation.html" class="btn-detail" aria-label="Voir le détail complet du projet Overcome Formation">Voir détail</a>
+      </article>
+
+      <!-- Projet 3 -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="300" tabindex="0">
+        <img
+          src="https://via.placeholder.com/400x160.png?text=App+RH+Excel"
+          alt="Application RH Excel automatisée"
+          class="project-image"
+          loading="lazy"
+        />
+        <h3>App RH Excel (terminée)</h3>
+        <p class="project-desc">
+          Application Excel VBA complète pour gestion des ressources humaines : paie, congés, alertes automatiques, reporting dynamique.
+        </p>
+        <div class="links">
+          <a href="https://github.com/monrepo/app-rh-excel" target="_blank" rel="noopener" aria-label="Voir le code GitHub de App RH Excel">GitHub</a>
+          <a href="https://youtu.be/demo-app-rh-excel" target="_blank" rel="noopener" aria-label="Voir la démonstration vidéo de App RH Excel">Vidéo démo</a>
+        </div>
+        <div class="progress-container" aria-label="Progression du projet App RH Excel">
+          <div class="progress-bar" data-complete="100"></div>
+        </div>
+        <small>100% terminé</small>
+
+        <div class="skills" aria-label="Compétences utilisées pour App RH Excel">
+          <div class="skill">
+            <div class="skill-name">Excel VBA</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Reporting Power BI</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Gestion RH</div>
+            <div class="skill-bar-container" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-bar" style="width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <a href="projets-details/app-rh-excel.html" class="btn-detail" aria-label="Voir le détail complet du projet App RH Excel">Voir détail</a>
+      </article>
+
+      <!-- Tu peux ajouter d'autres projets ici en suivant ce modèle -->
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    © 2025 Myrage Digital — Tous droits réservés.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if ('AOS' in window) AOS.init({ duration: 800, once: true });
+
+      // Animation des barres de progression (progress-bar et skill-bar)
+      const progressBars = document.querySelectorAll('.progress-bar');
+      const skillBars = document.querySelectorAll('.skill-bar');
+
+      function animateBars() {
+        progressBars.forEach(bar => {
+          const value = bar.getAttribute('data-complete');
+          bar.style.width = value + '%';
+        });
+        skillBars.forEach(bar => {
+          // Le style inline est déjà mis, on peut assurer la transition
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 100);
+        });
+      }
+
+      // On lance l'animation après AOS est prêt
+      window.addEventListener('load', animateBars);
+    });
+  </script>
+</body>
+</html>
